@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List of All Authors</title>
+</head>
+<body>
+  <a href="/authors/new">Add Authors</a>
+  <ul>
+    <% authors.each do |author| %>
+      <li>
+        <a href="/authors/<%= author["id"] %>">
+        <%= author["name"] %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= post["id"] %></title>
+</head>
+<body>
+  <h1><%= post["id"] %></h1>
+  <p>From author <%= post.author["name"] %></p>
+  <p>Tag: <%= post["tag"] %></p>
+  <p><%= post["content"] %></p>
+  <h2>Images</h2>
+  <% post.images.each do |image| %>
+  	<img src="<%= image["url"] %>" alt="Your image should display.">
+  <% end %>
+  <form action="/posts/<%= post["id"] %>/images" method="POST">
+  	<button>Add Images</button>
+  </form>
+</body>
+</html>

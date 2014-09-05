@@ -2,22 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
   <title>New Post</title>
 </head>
 <body>
   <form action="/posts" method="POST">
     <select name="author_id">
-      <% Author.all.each do |author| %>
+      <% authors.each do |author| %>
         <option value="<%= author["id"] %>"><%= author["name"] %></option>
       <% end %>      
     </select>
-    <form>
-    <input type="text" name="name"><br>
-    <input type="text" name="headline"><br>
-    <input type="text" name="content" placeholder="Write Your Post" />
-    <input type="text" name="tag" placeholder="Tags (optional)" /><br>
-</form>
-    <button>Submit</button>
+     <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+    </div>
+    <div>
+        <label for="headline">Headline:</label>
+        <input type="headline" id="headline" />
+    </div>
+    <div>
+        <label for="copy">Message:</label>
+        <textarea id="copy"></textarea>
+    </div>
+    
+    <div class="button">
+        <button type="submit">Publish!</button>
+    </div>
   </form>
 </body>
 </html>
+
+
+   
