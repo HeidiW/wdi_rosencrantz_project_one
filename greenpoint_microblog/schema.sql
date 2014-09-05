@@ -1,5 +1,6 @@
 CREATE TABLE micro_post (
   id serial primary key,
+  copy varchar(400),
   tag varchar(100)
 );
 

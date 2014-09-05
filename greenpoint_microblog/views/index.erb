@@ -5,7 +5,13 @@
   <title>Greenpoint Microblog</title>
 </head>
 <body>
-  <a href="/posts">See All Posts</a>
-  <a href="/authors">See All Authors</a>
+	<h1>Welcome to the Greenpoint Microblog</h1>
+ 	<div class="container">
+		<nav class="site-navigation">
+			<%= link_to "Home", root_path %>    
+			<%= link_to "Create A Post",  post_path %>
+			<%= link_to "Images",  image_path %>
+			<%= link_to "About", help_path %>
+		</nav>
 </body>
 </html>

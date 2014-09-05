@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'sinatra/reloader'
+require 'pg'
 require 'pry'
 require_relative './lib/connection'
 require_relative './lib/author'
@@ -17,7 +18,6 @@ end
 get("/authors") do 
   # local_var or method
   # Class.method    
-
   erb(:authors, { locals: { authors: Author.all(), } })
 end
 
@@ -34,7 +34,7 @@ end
 post("/posts") do
   post_hash = {
     tag: params["tag"],
-    content: params["content"],
+    copy: params["copy"],
     author_id: params["author_id"],
     created_at: Time.now
   }

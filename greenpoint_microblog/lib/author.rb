@@ -1,4 +1,5 @@
 require 'active_record'
+require 'pg'
 
 class Author < ActiveRecord::Base
   def post
