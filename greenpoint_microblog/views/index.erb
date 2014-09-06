@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheets/style.css">
   <title>Greenpoint Microblog</title>
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<h1>Welcome to the Greenpoint Microblog</h1>
- 	<div class="container">
-		<nav class="site-navigation">
-			<%= link_to "Home", root_path %>    
-			<%= link_to "Create A Post",  post_path %>
-			<%= link_to "Images",  image_path %>
-			<%= link_to "About", help_path %>
-		</nav>
+ 	<div id="nav">
+  <ul>
+<li><a href="./views/index.erb">Home</a></li>
+<li><a href="./views/new_post.erb">Create A Post</a></li>
+<li><a href="./views/subscribe.erb">Subscribe</a></li>
+<li><a href="./views/about.erb"></a>About</li>
+</ul>
+</div>
 </body>
 </html>

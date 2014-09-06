@@ -43,4 +43,16 @@ post("/posts") do
   erb(:posts, { locals: { posts: Post.all() } })
 end
 
+post("/subscriber/new") do
+ subscriber_hash = {
+    name: params["name"],
+    email: params["email"],
+    phone_number: params["phone_number"]
+  }
+
+  Post.create(subscriber_hash)
+  erb(:subscribe, { locals: { subscribe: Post.all() } })
+end
+
+
 
