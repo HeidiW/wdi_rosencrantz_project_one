@@ -5,7 +5,10 @@
 	<title><%= author.name %></title>
 </head>
 <body>
-	<h1><%= author.name %></h1>
+	<h1>
+		<%= author.name %>
+		<%= "(#{author.handle})" if author.handle %>
+	</h1>
 	<h2>Posts</h2>
 	<ul>
 		<% author.posts.each do |post| %>

@@ -1,0 +1,7 @@
+  <!-- <h2>Images</h2>
+  <% post.images.each do |image| %>
+  	<img src="<%= image["url"] %>" alt="Your image should display.">
+  <% end %>
+  <form action="/posts/<%= post["id"] %>/images" method="POST">
+  	<button>Add Images</button>
+  </form> -->

@@ -26,3 +26,8 @@ form {
     display:inline-block;
     padding:10px;
 }
+
+.updated {
+	color: green;
+	font-size: smaller;
+}

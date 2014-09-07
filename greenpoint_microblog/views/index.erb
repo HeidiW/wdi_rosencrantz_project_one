@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <title>Greenpoint Microblog</title>
-  <link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<title>Greenpoint Microblog</title>
+	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<h1>Welcome to the Greenpoint Microblog</h1>
- 	<div id="nav">
-  <ul>
-<li><a href="/">Home</a></li>
-<li><a href="/posts/new">Create A Post</a></li>
-<li><a href="/subscribe">Subscribe</a></li>
-<li><a href="/about"></a>About</li>
-</ul>
-</div>
+	<div id="nav">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/posts/new">Create A Post</a></li>
+			<li><a href="/subscribe">Subscribe</a></li>
+			<li><a href="/about"></a>About</li>
+		</ul>
+	</div>
+	<section id="feed">
+		<h2>Latest Posts:</h2>
+		<ul>
+			<% posts.each do |post| %>
+			<li>
+				<a href="/posts/<%= post[:id] %>">
+					<%= post[:headline] %>
+				</a>
+				by
+				<a href="/authors/<%= post.author[:id] %>">
+					<%= post.author[:name] %>
+				</a>
+			</li>
+			<% end %>
+		</ul>
+	</section>
 </body>
 </html>

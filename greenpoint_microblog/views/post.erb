@@ -2,19 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title><%= post["id"] %></title>
+  <title><%= post[:id] %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
-  <h1><%= post["id"] %></h1>
-  <p>From author <%= post.author["name"] %></p>
-  <p>Tag: <%= post["tag"] %></p>
-  <p><%= post["content"] %></p>
-  <h2>Images</h2>
-  <% post.images.each do |image| %>
-  	<img src="<%= image["url"] %>" alt="Your image should display.">
-  <% end %>
-  <form action="/posts/<%= post["id"] %>/images" method="POST">
-  	<button>Add Images</button>
-  </form>
+  <h1><%= post[:headline] %></h1>
+  <p>From author
+    <a href="/authors/<%= post.author[:id] %>">
+      <%= post.author[:name] %>
+    </a>
+  </p>
+  <p>
+    <form action="/posts/<%= post[:id] %>" method="post">
+      <label for="tag">Tag:</label>
+      <input type="text" id="tag" name="tag" value="<%= post[:tag] %>">
+      <button>Change tag</button>
+      <% if @tag_updated %>
+        <span class="updated">Tag updated!</span>
+      <% end %>
+    </form>
+  </p>
+  <p><%= post[:copy] %></p>
 </body>
 </html>
