@@ -1,11 +1,7 @@
-require 'sinatra'
-require 'sinatra/reloader'
-require 'pg'
-require 'pry'
 require_relative './lib/connection'
 require_relative './lib/author'
 require_relative './lib/post'
-
+require_relative './lib/subscriber'
 
 after do
   ActiveRecord::Base.connection.close
@@ -78,16 +74,19 @@ post("/posts/:id") do
   erb(:post, { locals: { post: post } })
 end
 
-post("/subscriber/new") do
+post("/subscribe") do
  subscriber_hash = {
     name: params["name"],
     email: params["email"],
     phone_number: params["phone_number"]
   }
 
-  Post.create(subscriber_hash)
-  erb(:subscribe, { locals: { subscribe: Post.all() } })
+  subscriber = Subscriber.create(name: name, email: email, phone_number: phone_number)
+  erb(:subcribe, { locals: { subscriber: subscriber } })
 end
 
+get("/subscribe") do
+  erb(:subscribe) 
+end 
 
 
