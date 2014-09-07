@@ -2,7 +2,7 @@ require 'active_record'
 require 'pg'
 
 class Author < ActiveRecord::Base
-  def post
-    Post.find_by({id: self.post_id})
+  def posts
+    Post.where({author_id: self.id})
   end
 end

@@ -21,10 +21,15 @@ get("/authors") do
   erb(:authors, { locals: { authors: Author.all(), } })
 end
 
-get("/authors/new") do
-	binding.pry
-  erb(:new_author, { locals: { posts: Post.all(), } })
+get("/authors/:id") do
+  author = Author.find_by({id: params[:id]})
+  erb(:author, { locals: { author: author } })
 end
+
+# get("/authors/new") do
+# 	binding.pry
+#   erb(:new_author, { locals: { posts: Post.all(), } })
+# end
 
 get("/posts/new") do
 
@@ -34,6 +39,7 @@ end
 post("/posts") do
   post_hash = {
     tag: params["tag"],
+    headline: params["headline"],
     copy: params["copy"],
     author_id: params["author_id"],
     created_at: Time.now

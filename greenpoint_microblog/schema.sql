@@ -1,4 +1,4 @@
-CREATE TABLE micro_post (
+CREATE TABLE post (
   id serial primary key,
   copy varchar(400),
   tag varchar(100)
@@ -7,13 +7,13 @@ CREATE TABLE micro_post (
 CREATE TABLE author (
   id serial primary key,
   name varchar(100),
-  micro_post_id integer
+  post_id integer
 );
 
 CREATE TABLE snippet (
   id serial primary key,
   url varchar(200),
-  micro_post_id integer
+  post_id integer
 );
 
 CREATE TABLE subscriber (
@@ -26,11 +26,11 @@ CREATE TABLE subscriber (
 CREATE TABLE tag (
   id serial primary key,
   name varchar(100),
-  micro_post_id integer
+  post_id integer
 );
 
 CREATE TABLE image (
   id serial primary key,
   tag varchar(100),
-  micro_post_id integer
+  post_id integer
 );
