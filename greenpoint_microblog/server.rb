@@ -73,6 +73,10 @@ post("/posts/:id") do
   erb(:post, { locals: { post: post } })
 end
 
+get("/feed") do
+  erb(:feed, { locals: { authors: Author.all } })
+end
+
 post("/subscribe") do
  subscriber_hash = {
     name: params["name"],

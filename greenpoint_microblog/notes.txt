@@ -1,0 +1,45 @@
+-->
+
+  # Get twilio-ruby from twilio.com/docs/ruby/install
+require 'rubygems'          # This line not needed for ruby > 1.8
+require 'twilio-ruby'
+ 
+# Get your Account Sid and Auth Token from twilio.com/user/account
+account_sid = 'AC5ef8732a3c49700934481addd5ce1659'
+auth_token = '{{ auth_token }}'
+@client = Twilio::REST::Client.new account_sid, auth_token
+ 
+message = @client.account.messages.create(:body => "Jenny please?! I love you <3",
+    :to => "+15558675309",
+    :from => "+14158141829",
+    :media_url => "http://www.example.com/hearts.png")
+puts message.to
+
+  #Twilio messaging
+=begin
+
+post = Post.new(content: "yip yip yip", catagory_id: 3, user_id: 2)   
+post.save # save to db 
+post.reload
+
+subscriptions = Subscription.where(catagory_id: post.catagory_id)  
+
+subscribed_users = subscriptions.map do |subscription|
+  User.find_by_id subscriptions.user_id 
+end 
+
+  account_sid = AC07783033c88b90e408a1fe7f640e92eb
+  auth_token = 57f48f3d65d72309c1dba369e993c754
+
+  @client = Twilio::REST::Client.new account_sid, auth_token
+
+  @client.messages.create(
+  :from => '+14159341234',
+  :to => '+16105557069',
+  :body => 'Hey there!'
+)=end
+
+
+   # reload from db so we can access the id given by sql 
+
+end
