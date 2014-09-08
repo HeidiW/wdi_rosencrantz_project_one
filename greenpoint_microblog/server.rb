@@ -63,6 +63,7 @@ post("/posts") do
     headline: params["headline"],
     copy: params["copy"],
     author_id: author_id,
+    image: params["image"],
     created_at: Time.now
   }
 
