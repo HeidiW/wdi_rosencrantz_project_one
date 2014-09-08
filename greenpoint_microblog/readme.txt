@@ -14,3 +14,4 @@ A user can opt to add their email or phone number to receive an update whenever 
 This text message or email should at least contain the title of the new micro_post
 A user can view micro_posts posts by author (authors/authorhandle/posts)
 A user can view micro_posts posts by tag (tag/tagname/posts)
+Add images to posts

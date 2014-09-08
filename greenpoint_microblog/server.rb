@@ -27,7 +27,6 @@ get("/authors/:authorhandle/posts") do
   erb(:author, { locals: { author: author } })
 end
 
-
 # get("/authors/new") do
 # 	binding.pry
 #   erb(:new_author, { locals: { posts: Post.all(), } })
