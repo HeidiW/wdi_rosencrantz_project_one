@@ -1,11 +1,12 @@
+require 'bundler/setup'
+Bundler.require
+
 require_relative './lib/connection'
 require_relative './lib/author'
 require_relative './lib/post'
 require_relative './lib/subscriber'
+require_relative './lib/image'
 
-after do
-  ActiveRecord::Base.connection.close
-end
 
 get("/") do
   erb(:index, { locals: { posts: Post.all() } })
@@ -42,6 +43,10 @@ get("/posts/:id") do
   erb(:post, { locals: { post: post } })
 end
 
+get("/feed") do
+  erb(:feed, { locals: { posts: Post.all } })
+end
+
 post("/posts") do
 
   if params["author_id"] == "new"
@@ -73,10 +78,6 @@ post("/posts/:id") do
   erb(:post, { locals: { post: post } })
 end
 
-get("/feed") do
-  erb(:feed, { locals: { authors: Author.all } })
-end
-
 post("/subscribe") do
  subscriber_hash = {
     name: params["name"],
@@ -88,8 +89,19 @@ post("/subscribe") do
   erb(:subcribe, { locals: { subscriber: subscriber } })
 end
 
+get("/images") do
+  image = Post.image(params[:id])
+  tag = params[:tag]
+  post_id = params[:post_id]
+  erb(:image, { locals: { post: post } }) 
+end 
+
 get("/subscribe") do
   erb(:subscribe) 
+end 
+
+get("/about") do
+  erb(:about) 
 end 
 
 

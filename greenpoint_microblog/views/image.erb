@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List of All Authors</title>
+</head>
+<body>
+  <a href="/images">Choose An Image</a>
+<!-- also add and tag images -->
+  <ul>
+    <% images.each do |image| %>
+      <li>
+        <a href="/images/<%= image["id"] %>">
+        <%= image.url %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>

@@ -6,4 +6,4 @@ class Subscriber < ActiveRecord::Base
     Subcriber.find_by({id: self.subscriber_id})
   end
 
-
+end

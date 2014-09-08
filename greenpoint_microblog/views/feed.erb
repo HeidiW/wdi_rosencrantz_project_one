@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="./stylesheets/style.css">
   <meta charset="UTF-8">
-  <title><%= post[:id] %></title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Greenpoint Microblog Feed</title>
 </head>
 <body>
-  <h1><%= post[:headline] %></h1>
-  <p>From author
-    <a href="/authors/<%= post.author[:id] %>">
-      <%= post.author[:name] %>
-    </a>
-  </p>
-  <p>
-    <form action="/posts/<%= post[:id] %>" method="post">
-      <label for="tag">Tag:</label>
-      <input type="text" id="tag" name="tag" value="<%= post[:tag] %>">
-      <button>Change tag</button>
-      <% if @tag_updated %>
-        <span class="updated">Tag updated!</span>
-      <% end %>
-    </form>
-  </p>
-  <p><%= post[:copy] %></p>
+  <ul>
+  <% posts.each do |post| %>
+  <h3><a href="/posts/<%= post.id %>"><%= post.headline %></a></h3>
+  <p><%= post.copy %></p>
+  <% if image.url %>
+  <img src="<%= image.url %>" >
+  <% end %>
+  <p><em>Created at: <%= post["created_at"] %></em> | <em> Authored by: <a href="/authors/<%= post["author_id"]%>/posts"><%= Author.find_by({id: post.author.id}).name %></a></em> | <em>Tag: <a href="/tags/<%= post["tag"]%>/posts"><%= post["tag"] %></a></em></p>
+  <% end %>
+  </ul>
+ </li>
 </body>
 </html>
+
+
+
