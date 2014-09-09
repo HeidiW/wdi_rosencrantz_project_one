@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="./stylesheets/style.css">
+   <title>Greenpoint Microblog</title>
+    </head>
+<body>
+  <h1>Welcome to the Greenpoint Microblog</h1>
+  <div id="navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/feed">Latest Posts</a></li>
+      <li><a href="/posts/new">Create A Post</a></li>
+      <li><a href="/subscribe">Subscribe</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
   <title>List of All Authors</title>
 </head>
 <body>
+  <h2> Who Writes For Us? </h2>
   <a href="/authors/new">Add Authors</a>
   <ul>
     <% authors.each do |author| %>

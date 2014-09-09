@@ -3,10 +3,20 @@
 <head>
   <link rel="stylesheet" href="./stylesheets/style.css">
   <meta charset="UTF-8">
-  <title>Greenpoint Microblog Feed</title>
+     <h1>Greenpoint Microblog</h1>
+  <div id="navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/feed">Latest Posts</a></li>
+      <li><a href="/posts/new">Create A Post</a></li>
+      <li><a href="/subscribe">Subscribe</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
+  <title>The Latest</title>
 </head>
 <body>
-  <h1>Greenpoint Microblog Feed</h1>
+  <h1>The Latest</h1>
   <ul>
   <% posts.each do |post| %>
   <h3><a href="/posts/<%= post.id %>"><%= post.headline %></a></h3>

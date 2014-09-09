@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <title>New Post</title>
-</head>
-<body>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Greenpoint Microblog</title>
+    </head>
+  <body>
+    <h1>Greenpoint Microblog</h1>
+  <div id="navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/feed">Latest Posts</a></li>
+      <li><a href="/posts/new">Create A Post</a></li>
+      <li><a href="/subscribe">Subscribe</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </div>
   <form action="/posts" method="POST">
     <select name="author_id">
       <% authors.each do |author| %>
