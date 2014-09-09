@@ -1,5 +1,6 @@
 CREATE TABLE post (
   id serial primary key,
+  headline varchar(300),
   copy varchar(400),
   tag varchar(100)
 );

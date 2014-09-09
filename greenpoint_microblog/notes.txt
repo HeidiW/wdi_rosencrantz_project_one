@@ -1,4 +1,14 @@
--->
+http://www.newyorkshitty.com/wp-content/uploads/2011/06/veng1.jpg
+
+DELETE FROM posts WHERE copy = "";
+
+ALTER TABLE posts ALTER COLUMN image TYPE varchar(300); 
+
+http://upload.wikimedia.org/wikipedia/commons/5/56/Greenpoint_Hospital_jeh.JPG
+
+http://ny.eater.com/archives/2013/05/river_styx_roebling_tea_rooms_greenpoint_restaurant.php
+
+INSERT INTO posts (image varchar(100)) VALUES ('http://ny.eater.com/archives/2013/05/river_styx_roebling_tea_rooms_greenpoint_restaurant.php');
 
   # Get twilio-ruby from twilio.com/docs/ruby/install
 require 'rubygems'          # This line not needed for ruby > 1.8

@@ -6,8 +6,4 @@ class Post < ActiveRecord::Base
     Author.find_by({id: self.author_id})
   end
    
-   def image
-    Image.where(post_id: self.id)
-  end
-
 end
